@@ -45,6 +45,10 @@ def load_data(real_dir, fake_dir):
 
 # Step 1: Load training data
 X_train, y_train = load_data(train_real_dir, train_fake_dir)
+print("🔍 Checking training dataset balance:")
+print(f"Real samples (0): {np.sum(y_train == 0)}")
+print(f"Fake samples (1): {np.sum(y_train == 1)}")
+
 
 # Step 2: Train the model
 print("Training model...")
@@ -53,6 +57,9 @@ model.fit(X_train, y_train)
 
 # Step 3: Load test data
 X_test, y_test = load_data(test_real_dir, test_fake_dir)
+print("🔍 Checking test dataset balance:")
+print(f"Real samples (0): {np.sum(y_test == 0)}")
+print(f"Fake samples (1): {np.sum(y_test == 1)}")
 
 # Step 4: Evaluate model
 print("Evaluating on test set...")

@@ -36,31 +36,46 @@ def process_dataset(source_dir, target_dir, label):
             create_spectrogram(input_path, output_path)
 
 if __name__ == "__main__":
-    # Train - real
+    #Test - real
     process_dataset(
-        "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/data/train",
-        "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/spectrograms/train",
+        "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/data/validation",
+        "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/spectrograms/validation",
         "real"
     )
+
+     #Test - fake
+    process_dataset(
+        "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/data/validation",
+        "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/spectrograms/validation",
+        "fake"
+    )
+    # Train - real
+    #process_dataset(
+    #    "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/data/train",
+    #   "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/spectrograms/train",
+    #   "real"
+    #)
 
     # Train - fake
-    process_dataset(
-        "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/data/train",
-        "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/spectrograms/train",
-        "fake"
-    )
+    #process_dataset(
+    #   "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/data/train",
+    #  "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/spectrograms/train",
+    # "fake"
+     # )
 
     # Test - real
-    process_dataset(
-        "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/data/test",
-        "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/spectrograms/test",
-        "real"
-    )
+    #process_dataset(
+    #    "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/data/test",
+    #    "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/spectrograms/test2",
+    #    "real"
+    #)
 
     # Test - fake
-    process_dataset(
-        "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/data/test",
-        "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/spectrograms/test",
-        "fake"
-    )
+    #process_dataset(
+    #    "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/data/test",
+    #    "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/spectrograms/test2",
+    #    "fake"
+    #)
+
+    
 

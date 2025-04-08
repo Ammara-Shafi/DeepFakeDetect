@@ -89,3 +89,32 @@ history = model.fit(
 )
 
 print(f"✅ Model trained and saved to {model_path}")
+
+def plot_training_history(history):
+    acc = history.history['accuracy']
+    val_acc = history.history['val_accuracy']
+    loss = history.history['loss']
+    val_loss = history.history['val_loss']
+    epochs_range = range(len(acc))
+
+    plt.figure(figsize=(12, 6))
+
+    # Accuracy Plot
+    plt.subplot(1, 2, 1)
+    plt.plot(epochs_range, acc, label='Training Accuracy')
+    plt.plot(epochs_range, val_acc, label='Validation Accuracy')
+    plt.legend(loc='lower right')
+    plt.title('Training vs Validation Accuracy')
+
+    # Loss Plot
+    plt.subplot(1, 2, 2)
+    plt.plot(epochs_range, loss, label='Training Loss')
+    plt.plot(epochs_range, val_loss, label='Validation Loss')
+    plt.legend(loc='upper right')
+    plt.title('Training vs Validation Loss')
+
+    plt.tight_layout()
+    plt.show()
+
+# Plot the training performance
+plot_training_history(history)

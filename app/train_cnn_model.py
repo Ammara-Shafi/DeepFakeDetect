@@ -1,3 +1,4 @@
+#this trains my CNN model. It also plots the training history
 import os
 from sklearn.utils import class_weight
 import numpy as np
@@ -115,6 +116,6 @@ def plot_training_history(history):
 
     plt.tight_layout()
     plt.show()
-
+    
 # Plot the training performance
 plot_training_history(history)

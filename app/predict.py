@@ -1,8 +1,11 @@
+#this will contain helper functions for my UI.
+
 import librosa
 import librosa.display
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
+import pandas as pd
 import os
 from tensorflow.keras.models import load_model #type: ignore
 from PIL import Image
@@ -41,4 +44,27 @@ def predict_audio(wav_path):
 
     label = "Fake" if prediction >= 0.5 else "Real"
     confidence = prediction if prediction >= 0.5 else 1 - prediction
-    return label, confidence
+
+    return label, confidence, spectrogram_path
+
+# === 🔁 Batch prediction support ===
+def predict_multiple_audios(file_paths, save_csv=False):
+    results = []
+    
+    for file_path in file_paths:
+        label, confidence, spec_path = predict_audio(file_path)
+        results.append({
+            "Filename": os.path.basename(file_path),
+            "Prediction": label,
+            "Confidence": confidence,
+            "Spectrogram": spec_path  # 👈 make sure to include this
+        })
+        df = pd.DataFrame(results)
+
+    if save_csv:
+        csv_path = os.path.join("temp_results.csv")
+        df.to_csv(csv_path, index=False)
+        return df, csv_path
+    
+    return df, None
+

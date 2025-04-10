@@ -42,9 +42,9 @@ def predict_audio(wav_path):
     img_array = preprocess_image(spectrogram_path)
     prediction = model.predict(img_array)[0][0]
 
-    label = "Fake" if prediction >= 0.5 else "Real"
-    confidence = prediction if prediction >= 0.5 else 1 - prediction
-
+    label = "Real" if prediction >= 0.5 else "Fake"
+    confidence = prediction if label == "Real" else 1 - prediction
+    
     return label, confidence, spectrogram_path
 
 # === 🔁 Batch prediction support ===

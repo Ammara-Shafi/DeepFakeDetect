@@ -1,0 +1,8 @@
+streamlit
+numpy
+pandas
+matplotlib
+soundfile
+librosa == 0.11.0
+tensorflow
+pillow

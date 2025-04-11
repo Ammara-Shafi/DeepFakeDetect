@@ -11,7 +11,7 @@ from tensorflow.keras.models import load_model #type: ignore
 from PIL import Image
 
 # === Load your model ===
-model_path = "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/model/cnn_model.h5"
+model_path = "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/cnn_model.h5"
 model = load_model(model_path)
 
 # === Convert .wav to spectrogram and save ===

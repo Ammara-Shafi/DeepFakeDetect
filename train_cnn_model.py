@@ -12,7 +12,7 @@ from tensorflow.keras.callbacks import ModelCheckpoint # type: ignore
 # Set paths
 train_dir = "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/spectrograms/train"
 test_dir = "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/spectrograms/test"
-model_path = "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/model/cnn_model.h5"
+model_path = "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/cnn_model.h5"
 
 # Image size
 img_height, img_width = 128, 128

@@ -17,7 +17,7 @@ test_data = image_dataset_from_directory(
 )
 
 # Path to the best model we saved
-model_path = "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/model/cnn_model.h5"
+model_path = "C:/Users/amsh/OneDrive - Boskalis/Desktop/deepfake_audio_detector/cnn_model.h5"
 
 # Load the trained model
 model = load_model(model_path)

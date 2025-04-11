@@ -3,6 +3,6 @@ numpy
 pandas
 matplotlib
 soundfile
-librosa == 0.11.0
+librosa
 tensorflow
 pillow
